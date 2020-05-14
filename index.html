@@ -626,11 +626,85 @@
             <article id="c-clone">
                 <h2 class="major">C-Clone</h2>
 
-                <h3 style="text-align:center">Coming soon</h3>
-
+                <!--<h3 style="text-align:center">Coming soon</h3>-->
                 <!--<span class="image main"><img src="images/pic03.jpg" alt="" /></span>-->
                 <!-- put showreel vid instead of image here -->
 
+                <p style="font-style:italic;text-align:center">
+                    Essentially my DirectX 11 testing grounds. Written in C++.
+                </p>
+
+                <p>
+                    <b>C-Clone</b> a small, WIP "engine" which features some visual effects, a couple of terrains, and
+                    it also includes two external libraries: imgui and libnoise. Other than that, there's not much to say about it, since
+                    its primary purpose is helping me wrap my mind around object oriented and graphics programming.
+                </p>
+
+                <h3 class="major">FEATURES</h3>
+
+
+                <form method="post" action="#">
+                    <div class="fields">
+
+                        <div class="field third">
+                            <label for="name">Effects</label>
+                            <ul>
+                                <li>
+                                    Normal Mapping
+                                </li>
+                                <li>
+                                    Parallax (simple and POM)
+                                </li>
+                                <li>
+                                    Self shadowing
+                                </li>
+                                <li>
+                                    Blurs (box, gaussian, DoF)<b>*</b>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="field third">
+                            <label for="name">Terrain</label>
+                            <ul>
+                                <li>
+                                    Grid based, from heightmap
+                                </li>
+                                <li>
+                                    Procedurally generated
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="field third">
+                            <label for="name">OTHER</label>
+                            <ul>
+                                <li>
+                                    Controllable Light
+                                </li>
+                                <li>
+                                    Cameras
+                                </li>
+                                <li>
+                                    GUI
+                                </li>
+                                <li>
+                                    Particle physics<b>*</b>
+                                </li>
+                                <li>
+                                    Rigidbody physics<b>*</b>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </form>
+
+                <p><b>*</b> Indicates finished effects that I'm not done implementing in reworked version yet. 
+                In the future I also plan to finish voxel terrain and implement a deferred renderer for practice.</p>
+
+                <h3 style="text-align:center">DEMO</h3>
+                <p style="text-align:center">[COMING SOON]</p>
+
+                <br />
                 <ul class="actions fit">
                     <li><a href="#projects" class="button">Back to Projects</a></li>
                     <li><a href="#bootleg" class="button">Next Project</a></li>
@@ -642,11 +716,82 @@
             <article id="fyp">
                 <h2 class="major">Final Year Project</h2>
 
-                <h3 style="text-align:center">Coming soon</h3>
-
                 <!--<span class="image main"><img src="images/pic03.jpg" alt="" /></span>-->
-                <!-- put showreel vid instead of image here -->
 
+                <p style="text-align:center;font-style:italic">
+                    Done using <b>Unreal Engine 4</b> version <b>4.20.3</b>. Combination of material editor and <b>HLSL</b>.
+                </p>
+
+                <!-- insert a video displaying all the effects or a screenshot -->
+
+                <p>
+                    The goal of my Final Year Project was to get a better understainding of UE4's material editor, material creation pipeline, 
+                    and how I can use HLSL to create different effects.
+                </p>
+
+                <p>
+                    In general, each post process effect I've created has multiple variations as I was trying to determine what techniques work better for which effect, 
+                    and how versatile I can make them be. The surface materials in the project were mostly done to make it easier for me to grasp a certain concept before I use it
+                    on post process materials, which is why they have a smaller scope and aren't displayed in the general map. 
+                    The material instances of finished final versions of the post process materials are highly customisable. 
+                    I know this is not ideal for performance, but any of the final materials could be separated into smaller scoped materials, 
+                    containing only the options relevant for what the user needs for their own project.
+                </p>
+
+                <p>
+                    The project also includes two external packs: 
+                    <a href="https://www.unrealengine.com/marketplace/en-US/product/paragon-grim-exe?sessionInvalidated=true">GRIM.exe</a> and 
+                    <a href="https://www.unrealengine.com/marketplace/en-US/product/stylized-desert-environment">Stylized Desert Environment</a>. 
+                </p>
+
+                <h3 style="text-align:center">Blur</h3>
+                
+                <p>Blur types are one of the simpler/easier effects I've created. At the moment, I have 
+                finished versions of box (full and separable) and gaussian blur (with simplified and full formula).</p>
+
+                <!-- insert blur images -->
+
+                <h3 style="text-align:center">Cel Shader</h3>
+
+                <p>Cel shader is done fully in material editor (no custom expressions). There's a lot of examples online of a cel shader in UE4, 
+                but all of those have a variety of flaws such as not displaying metallic or emissive objects, not displaying the hues of lights in the 
+                scene, having the fog look odd, etc. I tried to solve as many of those issues as I could in my version of the cel shader.</p>
+
+                <!-- insert cel shader images -->
+
+                <h3 style="text-align:center">Outline Shader</h3>
+
+                <p>The outline shaders in my project are based off laplacian and sobel edge detection, and there is one which is based off this tutorial by .
+                Each image has kernels used for convolution added to it.</p>
+
+                <!-- insert outline shader images -->
+
+                <h3 style="text-align:center">Deep Fried Meme Filter</h3>
+
+                <p>Here's a bonus I made while playing around in the editor: an effect which is supposed to imitate the look of deep fried memes.</p>
+
+                <!-- insert deep fried meme shader images -->
+
+                <h3 style="text-align:center">Misc</h3>
+
+                <p>Here's a quick fixed hue changer node which can be added anywhere. It's one of the first HLSL nodes I created, so it's fairly simple.</p>
+                <span class="youtube main">
+                    <iframe src="https://www.youtube.com/embed/TaQvW-vDwvA" frameborder="0" 
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </span>
+
+                <!-- insert misc images (e.g. emissive colour changer) -->
+                <br />
+
+                <h3 style="text-align:center">Effects I'm still working on</h3>
+                <ul>
+                    <li>Kuwahara (and alternatives/improvements)</li>
+                    <!--<li>Canny edge detection</li>-->
+                    <li>Radial and circular blurs</li>
+                    <li>Metaballs (ideally based off Cinnabar's mercury from Land of the Lustrous anime)</li>
+                </ul>
+
+                <br />
                 <ul class="actions fit">
                     <li><a href="#projects" class="button">Back to Projects</a></li>
                     <li><a href="#c-clone" class="button">Next Project</a></li>
